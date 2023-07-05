@@ -19,12 +19,18 @@ export default function Home() {
                     I’m a full-stack developer looking for a Fall 2023 co-op. Currently, focused on
                     building responsive crypto managing application using C++ and R.
                 </p>
-                <div>
-                    <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-                        View Work
+                <div className={'flex space-x-6' }>
+                    <button className='text-white group border-2 px-6 py-3 my-2 flex items-center '>
+                        Linkedin
                         <span className='group-hover:rotate-90 duration-300'>
-              <HiArrowNarrowRight className='ml-3 ' />
-            </span>
+
+                        </span>
+                    </button>
+                    <button className='text-white group border-2 px-6 py-3 my-2 flex items-center'>
+                        Resume
+                        <span className='group-hover:rotate-90 duration-300'>
+
+                        </span>
                     </button>
                 </div>
             </div>

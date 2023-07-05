@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Nav from "./components/nav";
 import Home from "./components/home";
+import Projects from "./components/projects";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
       <div className={'flex flex-col space-y-4'}>
           <Nav></Nav>
           <Home></Home>
+          <Projects></Projects>
       </div>
 
   </React.StrictMode>
