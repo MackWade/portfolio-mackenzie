@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import ProjectCard from "../utils /project-card";
+import ProjectCard from "../utils/project-card";
 
 export default function Projects() {
 
