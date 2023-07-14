@@ -25,7 +25,10 @@ export default function Projects() {
                 <h1 className={"pt-7 sm:text-6xl font-bold text-[#555555]"} >
                     Projects
                 </h1>
-                <ProjectCard/>
+                <div className={"flex flex-row py-60"}>
+                    {projects.map((project) => <ProjectCard name={project.name} bio={project.bio} img={project.img} />)}
+                </div>
+
             </div>
 
 
