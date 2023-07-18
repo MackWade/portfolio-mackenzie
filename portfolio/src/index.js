@@ -10,7 +10,7 @@ import Projects from "./components/projects";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <div className={'flex flex-col space-y-4'}>
+      <div className={'flex flex-col'}>
           <Nav></Nav>
           <Home></Home>
           <Projects></Projects>
