@@ -17,15 +17,15 @@ export default function Nav() {
     const [click,setClick] = useState(false)
 
     const handleClick = () => setNav(!nav);
-
+    const handleClick2 = () => setNav(!nav);
 
     /*
         The following menu items represents the contents of the page that can be accessed through the menu
      */
     const menus = [
         { name: "Home", ref:"home" },
-        { name: "Projects", ref:"" },
-        { name: "About", ref: ""},
+        { name: "Projects", ref:"project" },
+        { name: "About", ref: "about"},
         { name: "Contact Me", ref: "" },
     ]
 
@@ -57,9 +57,9 @@ export default function Nav() {
                     {!nav ? <FaBars /> : <FaTimes />}
                 </div>
 
-                <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#444444] flex flex-col justify-center items-center'}>
-                    {menus.map(({ name,ref }) => <li className='py-6 text-4xl' >
-                        <Link to={ref} spy={true} smooth={true} offset={-100} durration={500} >
+                <ul className={!nav ? 'hidden' : '  absolute top-0 left-0 w-full h-screen bg-[#83b1ff] flex flex-col justify-center items-center'}>
+                    {menus.map(({ name,ref }) => <li className='  font-bold text-[#FFFFFF] py-6 text-4xl' >
+                        <Link onClick={handleClick2}  to={ref} spy={true} smooth={true} offset={-100} durration={500} >
                             {name}
                         </Link>
                     </li>)}

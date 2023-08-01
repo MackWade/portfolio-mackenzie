@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Nav from "./components/nav";
 import Home from "./components/home";
 import Projects from "./components/projects";
-
+import About from "./components/about";
+import Contact from "./components/contact";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -14,6 +15,8 @@ root.render(
           <Nav></Nav>
           <Home></Home>
           <Projects></Projects>
+          <About></About>
+          <Contact></Contact>
       </div>
 
   </React.StrictMode>
