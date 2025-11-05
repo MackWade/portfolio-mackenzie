@@ -1,0 +1,48 @@
+name: Deploy Bubbly to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup/package-lock.json
+
+      - name: Install deps
+        working-directory: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup
+        run: npm ci
+
+      - name: Build
+        working-directory: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup
+        run: npm run build
+
+      - name: SPA fallback (copy index.html to 404.html)
+        working-directory: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup
+        run: cp dist/index.html dist/404.html
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup/dist
+          force_orphan: true
+          # If you use a custom domain, uncomment the next line and set your domain
+          # cname: example.com
