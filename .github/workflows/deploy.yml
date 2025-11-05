@@ -40,6 +40,10 @@ jobs:
         working-directory: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup
         run: cp dist/index.html dist/404.html
 
+      - name: Disable Jekyll
+        working-directory: bubbly-sparkle-showcase-main/bubbly-sparkle-showcase-main.backup
+        run: touch dist/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
